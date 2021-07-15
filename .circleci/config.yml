@@ -35,12 +35,6 @@ jobs:
       - docker/build:
           image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
 
-  - azure-acr/build-and-push-image:
-      login-server-name: qweq2d4513f6123d4s.azurecr.io
-      registry-name: qweq2d4513f6123d4s
-      repo: circle_ci
-      tag: $CIRCLE_TAG
-
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
@@ -50,3 +44,10 @@ workflows:
     jobs:
       - build-and-test
       - azure-acr/build-and-push-image
+  build-and-publish-docker-image:
+    jobs:
+      - azure-acr/build-and-push-image:
+          login-server-name: qweq2d4513f6123d4s.azurecr.io
+          registry-name: qweq2d4513f6123d4s
+          repo: circleci
+          tag: $CIRCLE_TAG
