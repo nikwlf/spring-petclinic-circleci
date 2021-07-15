@@ -1,3 +1,3 @@
 FROM openjdk:8
-ADD target /src
+ADD /home/circleci/project/target/ /src
 CMD [ "/usr/bin/find", "/" ]
