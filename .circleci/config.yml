@@ -43,7 +43,6 @@ workflows:
   sample: 
     jobs:
       - build-and-test
-      - azure-acr/build-and-push-image
   build-and-publish-docker-image:
     jobs:
       - azure-acr/build-and-push-image:
