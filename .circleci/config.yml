@@ -46,5 +46,5 @@ workflows:
       - azure-acr/build-and-push-image:
           login-server-name: qweq2d4513f6123d4s.azurecr.io
           registry-name: qweq2d4513f6123d4s
-          repo: qweq2d4513f6123d4s.azurecr.io
+          repo: circleci
           tag: $CIRCLE_TAG
